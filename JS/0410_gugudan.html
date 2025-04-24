@@ -1,0 +1,36 @@
+<!-- 구구단을 만들자! -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>gugu</title>
+  </head>
+
+  <body>
+    <P>
+    <!-- 텍스트  -->
+    <input type="text" id="number">  
+    <!-- 버튼 -->
+    <button type="button" value="버튼" id="btn1">구구단</button> 
+    </p>
+    <div id="resultArea"> 여기에 표시 </div> <!-- //결과를 표시할 영역 추가 -->
+    <!-- span태그는 줄을 안바꿔주고, div태그는 줄을 바꿔줌  -->
+     
+  </body>
+
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  
+  <script>
+    $("#btn1").click(function(){
+        $("#resultArea").html(""); //실행시마다 코드 초기화. 맨 뒤에 쓰면 값 자체가 날라가버림. 즉, 페이지 생성
+        let num = $("#number").val();  //numberid의 value값을 num이라는 변수에 넣겠다. 
+        $("#resultArea").append(`${num}단<br>`); 
+
+        for (let i=1; i<10;i++){
+            $("#resultArea").append(`<br>${num} * ${i}  = ${i*num}`); 
+        } 
+        //resultArea ID를 통해서 뒤에 a가 출력되는 것 
+        //숫자 1 옆에있는 ``를 사용하는 것 -> 매우 편리하다! 
+    });
+     </script>
+</html>
