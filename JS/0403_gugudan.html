@@ -1,0 +1,50 @@
+<!-- 구구단을 만들자! -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>gugu</title>
+  </head>
+
+  <body>
+    <input type="text" id="number">
+    <button type="button" value="버튼" id="btn1">구구단</button>
+    <div id="result"></div> <!-- //결과를 표시할 영역 추가-->
+  </body>
+
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $("#btn1").click(function(){
+        let number =  parseInt($("#number").val());
+        let output = ""; //출력결과를 표시
+        let inputno = 0;
+
+
+        if (number ==2){
+            for (let i=1; i<10; i++){
+                inputno = "";
+                for (let j=0; j<i; j++){  // 1~9까지의 수 출력
+                    inputno = i
+                }       document.write(2 + "*"+ inputno + "=" + inputno*2+"<br>");
+            }
+        }
+        if (number ==3){
+            for (let i=1; i<10; i++){
+                inputno = "";
+                for (let j=0; j<i; j++){  // 1~9까지의 수 출력
+                    inputno = i
+                }       document.write(3 + "*"+ inputno + "=" + inputno*3+"<br>");
+            }
+        }
+        else if (number ==4){
+            for (let i=1; i<10; i++){
+                inputno = "";
+                for (let j=0; j<i; j++){  // 1~9까지의 수 출력
+                    inputno = i
+                }       document.write(4 + "*"+ inputno + "=" + inputno*4+"<br>");
+            }
+        }
+
+        });
+
+     </script>
+</html>
