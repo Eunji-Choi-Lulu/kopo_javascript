@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>radio</title>
+    </head>
+    <body>
+
+        <!-- 문항 1, 2, 3에 대하여 각각 라디오박스가 5씩 존재 (0~4점) -->
+
+        1번
+        0<input type="radio" name="r1" value="0">
+        1<input type="radio" name="r1" value="1">
+        2<input type="radio" name="r1" value="2">
+        3<input type="radio" name="r1" value="3">
+        4<input type="radio" name="r1" value="4">
+        가중치  <input type="text" id="weight1" placeholder= ""><br>
+
+
+        
+        2번  
+        0<input type="radio" name="r2" value="0">
+        1<input type="radio" name="r2" value="1">
+        2<input type="radio" name="r2" value="2">
+        3<input type="radio" name="r2" value="3">
+        4<input type="radio" name="r2" value="4">
+        가중치  <input type="text" id="weight2" placeholder= ""><br>
+
+        
+        3번  
+        0<input type="radio" name="r3" value="0">
+        1<input type="radio" name="r3" value="1">
+        2<input type="radio" name="r3" value="2">
+        3<input type="radio" name="r3" value="3">
+        4<input type="radio" name="r3" value="4">
+        가중치  <input type="text" id="weight3" placeholder= ""><br>
+
+
+
+        <input type="button" id="btn" value="계산">
+        <p id="output"></p>
+
+
+
+    </body>
+    <script>
+
+    //계산버튼을 클릭하면 각 문항의 점수 * 가중치를 더한 값을 출력 
+    document.getElementById("btn").addEventListener('click', function(){
+
+    let result = ''; 
+    let result1 = ''; 
+    let result2 = ''; 
+    let result3 = ''; 
+
+
+    let r1_value = 0;
+    for(let i=0;i<document.getElementsByName("r1").length; i++){
+      if(document.getElementsByName("r1")[i].checked){
+        r1_value = parseInt(document.getElementsByName("r1")[i].value);
+      }
+    let weight1_value = parseInt(document.getElementById("weight1").value);
+    result1 = r1_value * weight1_value
+
+
+
+    let r2_value = 0;
+    for(let i=0;i<document.getElementsByName("r2").length; i++){
+      if(document.getElementsByName("r2")[i].checked){
+        r2_value = parseInt(document.getElementsByName("r2")[i].value);
+      }
+    let weight2_value = parseInt(document.getElementById("weight2").value);
+    result2 = r2_value * weight2_value
+
+
+
+    let r3_value = 0;
+    for(let i=0;i<document.getElementsByName("r3").length; i++){
+      if(document.getElementsByName("r3")[i].checked){
+        r1_value = parseInt(document.getElementsByName("r3")[i].value);
+      }
+    let weight3_value = parseInt(document.getElementById("weight3").value);
+    result3 = r3_value * weight3_value;
+
+
+    result = result1 + result2 + result3;
+    document.getElementById("output").innerHTML = (`${r1_value} x ${weight1_value} + ${r2_value} x ${weight2_value} + ${r3_value} x ${weight3_value} = ${result}`);
+
+    }}}});
+    </script>
+</html>

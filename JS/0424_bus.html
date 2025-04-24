@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>radio</title>
+  </head>
+  <body>
+    버스 1
+    있음 <input type="radio" name="bus1" value="true">
+    없음 <input type="radio" name="bus1" value="false"><br>
+
+    
+    버스 2
+    있음 <input type="radio" name="bus2" value="true">
+    없음 <input type="radio" name="bus2" value="false"><br>
+
+    버스 3
+    있음 <input type="radio" name="bus3" value="true">
+    없음 <input type="radio" name="bus3" value="false"><br>
+
+
+    지하철 1
+    있음 <input type="radio" name="metro1" value="true">
+    없음 <input type="radio" name="metro1" value="false"><br>
+
+    
+    지하철 2
+    있음 <input type="radio" name="metro2" value="true">
+    없음 <input type="radio" name="metro2" value="false"><br>
+
+    <input type="button" id="btn" value="확인버튼">
+    <p id="outpout"></p>
+    
+  </body>
+
+  <script>
+
+    document.getElementById("btn").addEventListener('click', function(){
+        const bus1 = document.getElementsByName("bus1");
+        const bus2 = document.getElementsByName("bus2");
+        const bus3 = document.getElementsByName("bus3");
+        const metro1 = document.getElementsByName("metro1");
+        const metro2 = document.getElementsByName("metro2");
+
+        let comebackhome = false; 
+        let now = false; 
+
+
+        for (let i = 0; i < bus1.length; i++){
+            if (bus1[i].checked && bus1[i].value == "true"){
+                comebackhome = true;  
+            }
+        }
+
+        for (let i = 0; i < bus2.length; i++){
+            if (bus2[i].checked && bus2[i].value == "true"){
+                comebackhome = true;  
+            }
+        }
+
+        for (let i = 0; i < bus3.length; i++){
+            if (bus3[i].checked && bus3[i].value == "true"){
+                comebackhome = true;  
+            }
+        }
+
+        for (let i = 0; i < metro1.length; i++){
+            if (metro1[i].checked && metro1[i].value == "true"){
+                now = true;  
+            }
+        }
+
+        for (let i = 0; i < metro2.length; i++){
+            if (metro2[i].checked && metro2[i].value == "true"){
+                now = true;  
+            }
+        }
+
+        if(comebackhome && now){
+            alert("집에 갈 수 있음");
+        }
+        else {
+            alert("집에 못감");
+        }
+    }); 
+
+  </script>
+</html> 
