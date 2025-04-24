@@ -1,0 +1,48 @@
+<!-- 숫자 세개를 입력받아 버튼 클릭시 콘솔에 합, 곱, 가장 큰 수, 가장 작은수를 출력 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login page</title>
+  </head>
+  <body>
+    number1:  <input type = "number" name= "" value="" id="number1"><br>
+    number2:  <input type = "number" name= "" value="" id="number2"><br>
+    number3:  <input type = "number" name= "" value="" id="number3"><br>
+    <button type="button" value="" id="btn1">눌러요</button>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+    $("#btn1").click(function(){
+      let firstNum =  parseInt($("#number1").val());
+      let secondNum = parseInt($("#number2").val());
+      let thirdNum = parseInt($("#number3").val());
+
+      let totalNum = firstNum + secondNum + thirdNum
+      let multiNum = firstNum * secondNum * thirdNum
+
+      if (firstNum > secondNum){
+        secondNum = firstNum
+      }
+        if (secondNum > thirdNum){
+          thirdNum = secondNum
+        }
+      mostValue = thirdNum
+
+      if (firstNum < secondNum){
+        secondNum = firstNum
+      }
+        if (secondNum < thirdNum){
+          thirdNum = secondNum
+        }
+      minValue = thirdNum
+
+        console.log("합: " + totalNum);
+        console.log("곱: " + multiNum);
+        console.log("가장 큰 수: " + mostValue);
+        console.log("가장 작은 수: " + minValue);
+      });
+  </script>
+</html>
