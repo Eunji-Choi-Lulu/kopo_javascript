@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>postWritePage</title>
+  </head>
+  <body>
+
+    <!-- title, text를 두개의 input창으로 입력받기  -->
+    제목: <input type="text" id="title"><br><br>
+    내용: <textarea id="content"></textarea><br><br>
+    <input type="button" id="writeBtn" value="글쓰기">
+    <input type="button" id="goBackToListPageBtn" value="취소">
+
+  </body>
+
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+
+    $("#writeBtn").click(function(){
+        $.ajax({
+                url: `/writePost`,
+                method: 'POST', 
+                data:{
+                  title : $("#title").val(),
+                  content : $("#content").val(),
+                },
+                    success: function(response) {
+                      if(response.affectedRows==1) { 
+                        alert("글 등록 완료");
+                        location.href = "/postListPage"
+                      }
+                      else{
+                        alert("서버 에러"); 
+                      }
+                },
+            });
+        });
+
+        
+        $("#goBackToListPageBtn").click(function(){
+          location.href = "/postListPage";
+        });
+
+  </script>
+</html>
